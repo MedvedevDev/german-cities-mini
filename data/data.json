@@ -5,7 +5,7 @@
     "image": "\uD83C\uDDE9\uD83C\uDDEA",
     "state": "Hamburg",
     "postalCodes": "20001–21149, 22001–22769",
-    "population": " 1.841 million (2019)",
+    "population": " 1.841 mln",
     "area": "755.2 km²",
     "overpopulated": true,
     "description": "Hamburg, a major port city in northern Germany, is connected to the North Sea by the Elbe River. It's crossed by hundreds of canals, and also contains large areas of parkland. Near its core, Inner Alster lake is dotted with boats and surrounded by cafes. The city's central Jungfernstieg boulevard connects the Neustadt (new town) with the Altstadt (old town), home to landmarks like 18th-century St. Michael’s Church."
@@ -16,8 +16,8 @@
     "image": "\uD83C\uDDE9\uD83C\uDDEA",
     "state": "Hesse",
     "postalCodes": "60306–60599, 65929–65936",
-    "population": "753,056 (2019)",
-    "area": "248.31 km2",
+    "population": "753,056",
+    "area": "248.31 km²",
     "overpopulated": false,
     "description": "Frankfurt, a central German city on the river Main, is a major financial hub that's home to the European Central Bank. It's the birthplace of famed writer Johann Wolfgang von Goethe, whose former home is now the Goethe House Museum. Like much of the city, it was damaged during World War II and later rebuilt. The reconstructed Altstadt (Old Town) is the site of Römerberg, a square that hosts an annual Christmas market."
   },
@@ -27,7 +27,7 @@
     "image": "\uD83C\uDDE9\uD83C\uDDEA",
     "state": "Berlin",
     "postalCodes": "10245, 10247, 10249, 10315",
-    "population": "3.645 million (2019)",
+    "population": "3.645 mln",
     "area": "891.8 km²",
     "overpopulated": true,
     "description": "Berlin, Germany’s capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains. Divided during the Cold War, its 18th-century Brandenburg Gate has become a symbol of reunification. The city's also known for its art scene and modern landmarks like the gold-colored, swoop-roofed Berliner Philharmonie, built in 1963"
@@ -38,8 +38,8 @@
     "image": "\uD83C\uDDE9\uD83C\uDDEA",
     "state": "Bavaria",
     "postalCodes": "80331–81929",
-    "population": "1.472 million (2019)",
-    "area": "891.8 km²",
+    "population": "1.472 million",
+    "area": "310.7 km²",
     "overpopulated": false,
     "description": "Munich, Bavaria’s capital, is home to centuries-old buildings and numerous museums. The city is known for its annual Oktoberfest celebration and its beer halls, including the famed Hofbräuhaus, founded in 1589. In the Altstadt (Old Town), central Marienplatz square contains landmarks such as Neo-Gothic Neues Rathaus (town hall), with a popular glockenspiel show that chimes and reenacts stories from the 16th century."
   },
@@ -49,8 +49,8 @@
     "image": "\uD83C\uDDE9\uD83C\uDDEA",
     "state": "Saxony",
     "postalCodes": "01067, 01069, 01097, 01099",
-    "population": "554,649 (2019)",
-    "area": "328.8 km2",
+    "population": "554,649",
+    "area": "328.8 km²",
     "overpopulated": false,
     "description": "Dresden is the capital city of the German state of Saxony and its second most populous city after Leipzig. It is the 12th most populous city of Germany, the fourth largest by area, and the third most populous city in the area of former East Germany, after Berlin and Leipzig"
   }
