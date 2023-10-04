@@ -1,17 +1,18 @@
 const fs = require('fs')
 const http = require('http')
+const url = require('url')
 
 // Function to replace placeholders with object data
 const replaceTemplate = (temp, city) => {
-    let output = temp.replace('{%CITYNAME%}', city.cityName);
-    output = output.replace('{%IMAGE%}', city.image);
-    output = output.replace('{%STATE%}', city.state);
-    output = output.replace('{%CITYCODES%}', city.postalCodes);
-    output = output.replace('{%CITYPOPULATION%}', city.population);
-    output = output.replace('{%CITYAREA%}', city.area);
-    output = output.replace('{%CITYDESCRIPTION%}', city.description);
+    let output = temp.replace(/{%CITYNAME%}/g, city.cityName);
+    output = output.replace(/{%IMAGE%}/g, city.image);
+    output = output.replace(/{%CITYAREA%}/g, city.area);
+    output = output.replace(/{%STATE%}/g, city.state);
+    output = output.replace(/{%CITYCODES%}/g, city.postalCodes);
+    output = output.replace(/{%CITYPOPULATION%}/g, city.population);
+    output = output.replace(/{%CITYDESCRIPTION%}/g, city.description);
 
-    if (!city.overpopulated) output = output.replace('{%NOT_OVERPOPULATED%}', 'not-live');
+    if (!city.overpopulated) output = output.replace(/{%NOT_OVERPOPULATED%}/g, 'not-live');
 
     return output;
 }
@@ -19,14 +20,15 @@ const replaceTemplate = (temp, city) => {
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'utf-8')
 const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, 'utf-8')
 const tempCity = fs.readFileSync(`${__dirname}/templates/template-city.html`, 'utf-8')
+
 const data = fs.readFileSync(`${__dirname}/data/data.json`, 'utf-8');
 const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
-    const pathName = req.url;
+    const { query, pathname } = url.parse(req.url, true);
 
     // Overview page
-    if (pathName === '/' || pathName === '/overview') {
+    if (pathname === '/' || pathname === '/overview') {
         res.writeHead(200, {'Content-type': 'text/html'})
 
         // Looping to replace placeholders
@@ -35,11 +37,14 @@ const server = http.createServer((req, res) => {
         res.end(output)
 
     // City page
-    } else if (pathName === '/city') {
-        res.end('City')
+    } else if (pathname === '/city') {
+        res.writeHead(200, {'Content-type': 'text/html'});
+        const city = dataObj[query.id],
+            output = replaceTemplate(tempCity, city);
+        res.end(output)
 
     // API
-    } else if (pathName === '/api') {
+    } else if (pathname === '/api') {
         res.writeHead(200, {'Content-type': 'application/json'})
         res.end(data);
 
