@@ -1,21 +1,7 @@
 const fs = require('fs')
 const http = require('http')
 const url = require('url')
-
-// Function to replace placeholders with object data
-const replaceTemplate = (temp, city) => {
-    let output = temp.replace(/{%CITYNAME%}/g, city.cityName);
-    output = output.replace(/{%IMAGE%}/g, city.image);
-    output = output.replace(/{%CITYAREA%}/g, city.area);
-    output = output.replace(/{%STATE%}/g, city.state);
-    output = output.replace(/{%CITYCODES%}/g, city.postalCodes);
-    output = output.replace(/{%CITYPOPULATION%}/g, city.population);
-    output = output.replace(/{%CITYDESCRIPTION%}/g, city.description);
-
-    if (!city.overpopulated) output = output.replace(/{%NOT_OVERPOPULATED%}/g, 'not-live');
-
-    return output;
-}
+const replaceTemplate = require('./modules/replaceTemplate')
 
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'utf-8')
 const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, 'utf-8')
