@@ -2,6 +2,7 @@ const fs = require('fs')
 const http = require('http')
 const url = require('url')
 const replaceTemplate = require('./modules/replaceTemplate')
+const slugify = require('slugify')
 
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'utf-8')
 const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, 'utf-8')
@@ -9,6 +10,8 @@ const tempCity = fs.readFileSync(`${__dirname}/templates/template-city.html`, 'u
 
 const data = fs.readFileSync(`${__dirname}/data/data.json`, 'utf-8');
 const dataObj = JSON.parse(data);
+
+const citySlugs = dataObj.map(element => slugify(element.cityName, { lower: true }))
 
 const server = http.createServer((req, res) => {
     const { query, pathname } = url.parse(req.url, true);
